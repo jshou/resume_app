@@ -1,0 +1,92 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <head>
+        <title>Automatic Resumé Creator</title>
+        <style type="text/css">
+            div.template
+            {
+                display:none;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+        <script src="add_fields.js" type="text/javascript" language="javascript"></script>
+        <script tyep="text/javascript" language="javscript">
+        </script>
+    </head>
+
+    <body>
+        <h1>Automatic Resumé Creator</h1>
+
+        <hr color="#006600" size="10" width="300px" align="left">
+        <h3>Instructions</h3>
+        Fill in the following fields and click submit to create a PDF resumé.  Click <a href="sample.pdf">here</a> for a sample resumé created with this system.
+        <hr color="#006600" size="10" width="300px" align="left">
+
+        <h3>Resumé</h3>
+        <form action='cgi-bin/action.cgi' name="resume" method="post" target="blank">
+            Name: <input type="text" name="name"><br/>
+            Title: <input type="text" name="title"><br/>
+            Tel: <input type="text" name="tel"><br/>
+            Email: <input type="text" name="email"><br/>
+            Address line 1:<input type="text" name="address1"><br/>
+            Address line 2:<input type="text" name="address2"><br/><br/>
+            <hr color="#006600" size="10" width="300px" align="left">
+
+            <span id="writeroot"></span>
+
+
+            <input type="button" value="Add descriptions section" id="add-descriptions-button">
+            <input type="button" value="Add institutions section" id="add-institutions-button">
+            <input type="button" value="Add text section" id="add-text-button">
+            <br/>
+            <br/>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+
+        <hr color="#006600" size="10" width="300px" align="left">
+
+        <div id="resume-text" class="template">
+            <h3>Text</h3>
+            Section name: <input type="text" name="section-name"><br/>
+            Text:<br/>
+            <textarea name="section-text" rows=10 cols=35></textarea><br/>
+            <input type="button" name="add" class="remove" value="Remove this section"><br/>
+            <hr color="#006600" size="10" width="300px" align="left">
+        </div>
+        
+        <div id="resume-descriptions" class="template">
+            <h3>Descriptions</h3>
+            Section name: <input type="text" name="section-name"><br/>
+            <ul>
+                <input type="button" name="add" value="Add Description" class="add-description">
+            </ul>
+            <input type="button" name="remove" class="remove" value="Remove this section">
+            <hr color="#006600" size="10" width="300px" align="left">
+        </div>
+
+        <div id="resume-institutions" class="template">
+            <h3>Institutions (academic or professional)</h3>
+            Section name: <input type="text" name="section-name"><br/>
+            <ul>
+                <input type="button" name="add" value="Add Institution" class="add-institution">
+            </ul>
+            <input type="button" name="add" class="remove" value="Remove this section">
+            <hr color="#006600" size="10" width="300px" align="left">
+        </div>
+
+        <div id="resume-description-content" class="template">
+            Header: <input type="text" name="description-header"> Text: <input type="text" name="description-content"><input type="button" name="remove" value="Remove" class="remove"><br/><br/>
+        </div>
+
+        <div id="resume-institution-content" class="template">
+            Institution: <input type="text" name="resume-institution-name"><br/>
+            Title: <input type="text" name="resume-institution-title"><br/>
+            Location: <input type="text" name="resume-institution-location"><br/>
+            Dates: <input type="text" name="resume-institution-dates"><br/>
+            Description:<br/>
+            <textarea name="resume-institution-description" rows=10 cols=35></textarea><br/>
+            <input type="button" name="remove" value="Remove Institution" class="remove">
+            <br/><br/>
+        </div>
+    </body>
+</html>
